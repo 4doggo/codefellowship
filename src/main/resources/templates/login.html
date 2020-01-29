@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <span th:replace="fragments/common :: span"></span>
+
 </head>
 <body>
 <h1>Log In to CodeFellowShip</h1>
+<nav th:replace="fragments/common :: nav"></nav>
 <form method="POST" action="/login">
     <label>Username<input name="username"/></label>
     <label>Password <input type="password" name="password" /></label>
-    <input type="submit" />
+    <input type="submit" />   <input type="reset">
 </form>
+<span th:replace="fragments/common :: span1"></span>
 </body>
 </html>
