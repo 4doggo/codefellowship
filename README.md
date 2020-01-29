@@ -13,3 +13,4 @@ Contributer: Shingo Nakajima
 3. run app with ./gradlew bootRun to run 
 4. Open http://localhost:8080/
 5. Once landing page opens then submit necessary information to create unique username and password
+6. After logging in create a post with necessary information and submit to see your post
