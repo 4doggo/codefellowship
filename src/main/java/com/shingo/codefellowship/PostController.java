@@ -29,10 +29,6 @@ public class PostController {
         return new RedirectView("/");
     }
 
-    @GetMapping("/posts")
-    public String getPostsPage(){
 
-        return new RedirectView("/posts");
-    }
 
 }
