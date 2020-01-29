@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Sign Up</title>
+    <span th:replace="fragments/common :: span"></span>
+
 </head>
 <body>
-<h1>Sign Up for Code Fellows</h1>
+<h1>Sign Up for CodeFellowShip</h1>
+<nav th:replace="fragments/common :: nav"></nav>
+
+<h3 th:if="${param.taken}">Sorry, that username is taken. Try again.</h3>
 
 <form action="/signup" method="POST">
     <label>Username <input name="username"/> </label>
@@ -14,7 +19,7 @@
     <label>Last name <input name="lastName" /></label>
     <label>Date of Birth <input name="dateOfBirth" /></label>
     <label>Bio <input name="bio" /></label>
-    <input type="submit" />
+    <input type="submit" />   <input type="reset">
 </form>
 </body>
 </html>

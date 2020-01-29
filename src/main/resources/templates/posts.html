@@ -2,18 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CodeFellowship</title>
-    <span th:replace="fragments/common :: span"></span>
-
+    <title>Title</title>
 </head>
 <body>
-
-<h1>CodeFellowShip Home Page</h1>
-<nav th:replace="fragments/common :: nav"></nav>
-
-<div>
-
-</div>
 
 <h3>Create a post!</h3>
 <form th:if="${user}" action="/posts" method="POST">
