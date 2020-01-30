@@ -21,8 +21,8 @@ public class PostController {
     @Autowired
     ApplicationUserRepository applicationUserRepository;
 
-    @PostMapping("/")
-    public RedirectView createPost(String body, String title, int createdAt, Principal p){
+    @PostMapping("/posts")
+    public RedirectView createPost(String body, String title, String createdAt, Principal p){
         Post post = new Post(body, title, createdAt, applicationUserRepository.findByUsername(p.getName()));
 
         postRepository.save(post);

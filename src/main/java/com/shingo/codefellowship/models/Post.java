@@ -11,7 +11,7 @@ public class Post {
 
     String body;
     String title;
-    int createdAt;
+    String createdAt;
 
     @ManyToOne
     ApplicationUser user;
@@ -21,7 +21,7 @@ public class Post {
     public Post(){}
 
 
-    public Post(String body, String title, int createdAt, ApplicationUser user) {
+    public Post(String body, String title, String createdAt, ApplicationUser user) {
         this.body = body;
         this.title =title;
         this.createdAt = createdAt;
@@ -41,7 +41,7 @@ public class Post {
     }
 
 
-    public int getCreatedAt() {
+    public String getCreatedAt() {
         return createdAt;
     }
 }
