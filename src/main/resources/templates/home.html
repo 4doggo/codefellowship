@@ -11,14 +11,17 @@
 <h1>CodeFellowShip Home Page</h1>
 <nav th:replace="fragments/common :: nav"></nav>
 
-<div th:each="post : ${user.posts}">
-    <h4>New Post </h4>
-    <p>Title: [[${post.title}]]</p>
-    <p>Post: [[${post.body}]]</p>
-    <p>Date: [[${post.createdAt}]]</p>
+<div>
+    <div th:each="post : ${user?.posts}">
+        <h4>New Post </h4>
+        <p>Title: [[${post.title}]]</p>
+        <p>Post: [[${post.body}]]</p>
+        <p>Date: [[${post.createdAt}]]</p>
+    </div>
 </div>
 
-<h3>Create a post when after you sign in!</h3>
+
+<h3>Sign in and create a post!</h3>
 <form th:if="${user}" action="/posts" method="POST">
     <label>Title<input type="text" name="title"/></label>
     <br>
