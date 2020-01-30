@@ -25,6 +25,18 @@ public class ApplicationUser implements UserDetails {
     @OneToMany(mappedBy = "user")
     List<Post> posts;
 
+    @ManyToMany
+            @JoinTable(
+                    name = "user_posts",
+                    joinColumns = { @JoinColumn(name = "doer_id")},
+                    inverseJoinColumns = { @JoinColumn(name = "receiver_id")}
+            )
+    List<ApplicationUser> userIFollow;
+
+
+    @ManyToMany
+    List<ApplicationUser> userFollowingMe;
+
 
 //    Default constructor
     public ApplicationUser(){}
@@ -79,6 +91,12 @@ public class ApplicationUser implements UserDetails {
         return null;
     }
 
+    public List<ApplicationUser> getUserIFollow(){
+        return this.userIFollow;
+    }
 
+    public List<ApplicationUser> getUserFollowingMe(){
+        return this.userFollowingMe;
+    }
 
 }
